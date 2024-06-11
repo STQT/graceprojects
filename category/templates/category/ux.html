@@ -1,0 +1,148 @@
+{% extends 'category/base.html' %}
+{% load static %}
+
+
+    <title>{% block title %}{{ title }}{% endblock %}</title>
+
+
+
+ {% block contend %}
+
+    <section>
+          <div class="bg-parentsev">
+            <div class="bg-im">
+                <h1>UI/UX дизайн</h1>
+                <p><span>UI/UX дизайн</span>  Lorem ipsum dolor sit amet consectetur. Sapien feugiat nibh accumsan id porttitor enim nunc condimentum. Diam enim ornare tristique dui. Amet sed convallis nisl amet donec lacus ut. Arcu habitasse enim donec vestibulum.Arcu habitasse enim donec vestibulum.Lorem ipsum dolor sit amet consectetur. Sapien feugiat nibh accumsan id porttitor enim nunc condimentum. . </p>
+
+            </div>
+          </div>
+    </section>
+    <div class="btns">
+        <ul class="btnss">
+            <li><a id="category1" class="category" onclick="highlightCategory(this)" href="{% url 'models' %}"> 3D-модели</a></li>
+            <li><a id="category2" class="category" onclick="highlightCategory(this)" href="{% url 'panarama' %}"> Съемки 360°</a></li>
+            <li><a id="category3" class="category" onclick="highlightCategory(this)" href="{% url 'dron' %}"> Видео с дрона</a></li>
+            <li><a id="category4" class="category" onclick="highlightCategory(this)" href="{% url 'ar' %}"> AR разработка</a></li>
+            <li><a id="category5" class="category" onclick="highlightCategory(this)" href="{% url 'foto' %}"> Фото-видео съемка</a></li>
+            <li><a id="category6" class="category" onclick="highlightCategory(this)" href="{% url 'vr' %}"> VR разработка</a></li>
+            <li><a id="category7" class="category" onclick="highlightCategory(this)" href="{% url 'ux' %}"> UI/UX дизайн</a></li>
+            <li><a id="category8" class="category" onclick="highlightCategory(this)" href="#"> Разработка бренда</a></li>
+        </ul>
+    </div>
+
+
+    <section class="slickslider">
+      <div class="slickslider-items">
+        <div><img src="/static/vendor/img/ux1.png" alt="Image 3"></div>
+        <div><img src="/static/vendor/img/ux2.png" alt="Image 3"></div>
+        <div><img src="/static/vendor/img/ux3.png" alt="Image 3"></div>
+        <div><img src="/static/vendor/img/ux1.png" alt="Image 3"></div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const container = document.querySelector('.');
+            const wrapper = document.querySelector('.carousel-slide');
+            const slides = document.querySelectorAll('.carousel-slide');
+            const prevBtn = document.querySelector('.prevBtn');
+            const nextBtn = document.querySelector('.nextBtn');
+
+            const slideWidth = slides[0].clientWidth;
+            let currentIndex = 0;
+
+            // Клонируем первый и последний слайды для бесконечного прокручивания
+            const firstClone = slides[0].cloneNode(true);
+            const lastClone = slides[slides.length - 1].cloneNode(true);
+
+            wrapper.appendChild(firstClone);
+            wrapper.insertBefore(lastClone, slides[0]);
+
+            wrapper.style.transform = `translateX(-${slideWidth}px)`;
+
+            // Функция для переключения на следующий слайд
+            function nextSlide() {
+                currentIndex++;
+
+                if (currentIndex >= slides.length) {
+                    currentIndex = 0;
+                    wrapper.style.transition = 'none';
+                    wrapper.style.transform = `translateX(-${slideWidth}px)`;
+                }
+
+                setTimeout(() => {
+                    wrapper.style.transition = 'transform 0.5s ease';
+                    wrapper.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
+                }, 0);
+            }
+
+            // Функция для переключения на предыдущий слайд
+            function prevSlide() {
+                currentIndex--;
+
+                if (currentIndex <= 0) {
+                    currentIndex = slides.length - 2;
+                    wrapper.style.transition = 'none';
+                    wrapper.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
+                }
+
+                setTimeout(() => {
+                    wrapper.style.transition = 'transform 0.5s ease';
+                    wrapper.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
+                }, 0);
+            }
+
+            // Обработчики событий для кнопок
+            nextBtn.addEventListener('click', nextSlide);
+            prevBtn.addEventListener('click', prevSlide);
+
+            // Автоматическая прокрутка
+            let interval = setInterval(nextSlide, 3000);
+
+            container.addEventListener('mouseenter', () => {
+                clearInterval(interval);
+            });
+
+            container.addEventListener('mouseleave', () => {
+                interval = setInterval(nextSlide, 3000);
+            });
+        });
+    </script>
+    <script>
+    function highlightCategory(category) {
+    // Удаляем подсветку у всех категорий
+    const categories = document.querySelectorAll('.category');
+    categories.forEach(cat => cat.classList.remove('active'));
+
+    // Подсвечиваем выбранную категорию
+    category.classList.add('active');
+}
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Получаем текущий URL-адрес страницы
+            var currentUrl = window.location.href;
+
+            // Получаем все ссылки категорий
+            var categoryLinks = document.querySelectorAll('.btnss a');
+
+            // Перебираем ссылки категорий
+            categoryLinks.forEach(function(link) {
+                // Проверяем, содержит ли ссылка текущий URL-адрес страницы
+                if (link.href === currentUrl) {
+                    // Добавляем класс .active к родительскому элементу ссылки
+                    link.parentElement.classList.add('active');
+                }
+            });
+        });
+    </script>
+
+ {% endblock %}

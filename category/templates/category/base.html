@@ -1,0 +1,277 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en-ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="/static/vendor/css/slick.css" >
+    <link rel="stylesheet" href="/static/vendor/css/glomain.css" >
+    <link rel="stylesheet" href="/static/vendor/css/main.css" >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+   <header class="header">
+
+                <a class="header-content" href="{% url 'index' %}">
+                  <img
+                    class="logo-icon"
+                    loading="lazy"
+                    alt=""
+                    src="/static/vendor/img/Logo.svg"
+                  >
+                </a>
+                  <ul class="menu-wrapper">
+                    <li class="text1" >
+                      <a class="text" href="#about">О нас</a>
+                    </li>
+                    <li class="text1" >
+                      <a class="text" href="#project">Проекты</a>
+                    </li>
+                    <li class="text1" >
+                      <a class="text" href="#service">Сервисы</a>
+                    </li>
+                    <li class="text1" >
+                      <a class="text" href="#part">Партнеры</a>
+                    </li>
+                    <li class="text1" >
+                      <a class="text" href="#footer">Контакты</a>
+                    </li>
+                  </ul>
+
+
+            </header>
+
+{% block contend %}{% endblock %}
+
+
+
+
+
+
+
+
+<section class="footer-box-parent" id="footer">
+            <div class="footer-box"></div>
+            <div class="footer-content">
+              <div class="logo-box-parent">
+                <div class="logo-box">
+                  <img class="logo-icon2" alt="" src="/static/vendor/img/logo%20grace.svg" />
+                </div>
+                <a class="button7">
+                  <div class="text15">(97) 131 00 23</div>
+                  <img class="icon4" alt="" src="/static/vendor/img/cel.svg" />
+                </a>
+              </div>
+              <div class="footer-menu">
+                <div class="company-info-parent">
+                  <div class="company-info">
+                    <div class="company-details">
+                      <h3 class="grace-projects">Grace Projects</h3>
+                      <div class="lorem-ipsum-dolor2">
+                        Lorem ipsum dolor sit amet consectetur. Sapien feugiat nibh
+                        accumsan id porttitor enim nunc condimentum. Diam enim
+                        ornare tristique dui. Amet sed convallis nisl amet donec
+                        lacus ut. Arcu habitasse enim donec vestibulum.Arcu
+                        habitasse enim donec vestibulum.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="navigation1">
+                    <h3 class="h32">Меню</h3>
+                    <div class="navigation-links">
+                      <div class="text16">
+                        <div class="text17">О нас</div>
+                      </div>
+                      <div class="text18">
+                        <div class="text19">Проекты</div>
+                      </div>
+                      <div class="text20">
+                        <div class="text21">Сервисы</div>
+                      </div>
+                      <div class="text22">
+                        <div class="text23">Партнеры</div>
+                      </div>
+                      <div class="text24">
+                        <div class="text25">Контакты</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="services">
+                    <h3 class="h33">Сервисы</h3>
+                    <div class="service-tabs">
+                      <button class="tab">
+                        <div class="tab-names">3D-модели</div>
+                      </button>
+                      <button class="tab1">
+                        <div class="text26">камеры 360°</div>
+                      </button>
+                      <button class="tab2">
+                        <div class="text27">видео с дрона</div>
+                      </button>
+                      <button class="tab3">
+                        <div class="text28">Разработка бренда</div>
+                      </button>
+                      <button class="tab4">
+                        <div class="text29">фото-видео съемка</div>
+                      </button>
+                      <button class="tab5">
+                        <div class="text30">VR разработка</div>
+                      </button>
+                      <button class="tab6">
+                        <div class="text31">AR разработка</div>
+                      </button>
+                      <button class="tab7">
+                        <div class="text32">UI/UX дизайн</div>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="social-media">
+
+                    <a class="component-29-wrapper" href>
+                      <div class="component-29">
+                        <img
+                        class="icon-backgrounds"
+                          alt=""
+                          src="/static/vendor/img/telegram.svg"
+                        />
+                      </div>
+                    </a>
+
+
+                    <a class="component-29-container" href="#">
+                        <div class="socials">
+
+                          <img
+                          class="icon-boxes"
+                            alt=""
+                            src="/static/vendor/img/face.svg"
+                          />
+                        </div>
+                    </a>
+
+
+                    <a class="component-29-frame" href="">
+
+                        <div class="socials1">
+
+                          <img
+                          class="socials-child"
+                            alt=""
+                            src="/static/vendor/img/insta.svg"
+                          />
+                        </div>
+
+                    </a>
+
+
+                    <a class="component-29-wrapper1" href="">
+                        <div class="socials2">
+                          <img
+                          class="socials-item"
+                            alt=""
+                            src="/static/vendor/img/xtw.svg"/>
+                        </div>
+                    </a>
+
+                    <a class="component-29-wrapper2" href="#">
+
+                        <div class="socials3">
+
+                          <img
+                          class="socials-inner"
+                            alt=""
+                            src="/static/vendor/img/whats.svg"
+                          />
+                        </div>
+
+                    </a>
+
+                    <a class="component-29-wrapper3" href="#">
+
+                        <div class="socials4">
+
+                          <img
+                          class="rectangle-div"
+                            alt=""
+                            src="/static/vendor/img/you.svg"
+                          />
+                        </div>
+
+                    </a>
+
+                </div>
+              </div>
+              <div class="base"></div>
+            </div>
+            <div class="footer-info">
+              <div class="copyright">
+                <div class="grace-projects-">© Grace Projects - 2024</div>
+              </div>
+              <div class="contact">
+                <div class="component-42">
+                  <img class="social-icon" alt="" src="/static/vendor/img/mail.svg" />
+
+                  <div class="email">
+                    <a class="infogpgroup" href="">info@gp.group</a>
+                  </div>
+                </div>
+              </div>
+              <div class="tab8">
+                <div class="address">
+                  <a class="div3" href="https://www.google.com/maps/d/viewer?mid=1B1lAsUpYFg82Je7XN1_cxRPf1UU&hl=en_US&ll=41.30295067711171%2C69.3151112715191&z=20">
+                    Узбекистан, Ташкент, Яшнабадский район, ул. Махтумкули, 1А
+                  </a>
+                </div>
+                <a class="button8" href="https://www.google.com/maps/d/viewer?mid=1B1lAsUpYFg82Je7XN1_cxRPf1UU&hl=en_US&ll=41.30295067711171%2C69.3151112715191&z=20">
+                  <div class="map">Map</div>
+                  <img class="icon5" alt="" src="/static/vendor/img/strel.svg" />
+                </a>
+              </div>
+            </div>
+          </section>
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+   <script type="text/javascript" src="/static/vendor/js/slick.min.js"></script>
+<script>
+      $(document).ready(function(){
+        $('.slickslider-items').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        dots:true,
+        prevArrow: '<button type="button" class="slick-prev"><img src="/static/vendor/img/chap.svg"></button>',
+        nextArrow: '<button type="button" class="slick-next"><img src="/static/vendor/img/chap.svg"></button>'
+      });
+    });
+let sections = document.querySelectorAll("section");
+let navLinks = document.querySelectorAll("header li a ");
+
+window.onscroll = () => {
+    sections.forEach(sec => {
+        let top = window.scrollY;
+        let offset = sec.offsetTop;
+        let height = sec.offsetHeight;
+        let id = sec.getAttribute('id');
+        
+        if(top >= offset && top < offset + height) {
+            navLinks.forEach(links => {
+                links.classList.remove('active');
+                document.querySelector('header li a[href*= ' + id + ' ]').classList.add('active');
+            })
+            
+        }
+        
+        
+    })
+} 
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+{% extends 'category/base.html' %}
+{% load static %}
+
+
+    <title>{% block title %}{{ title }}{% endblock %}</title>
+
+
+
+ {% block contend %}
+
+    <section>
+          <div class="bg-parent">
+            <div class="bg-im">
+                <h1>Создание 3D-модели</h1>
+                <p><span>Drone Dji mavic pro</span>  Lorem ipsum dolor sit amet consectetur. Sapien feugiat nibh accumsan id porttitor enim nunc condimentum. Diam enim ornare tristique dui. </p>   
+              
+            </div>
+          </div>
+    </section>  
+    <div class="btns">
+        <ul class="btnss">
+            <li><a id="category1" class="category" onclick="highlightCategory(this)" href="{% url 'models' %}"> 3D-модели</a></li>
+            <li><a id="category2" class="category" onclick="highlightCategory(this)" href="{% url 'panarama' %}"> Съемки 360°</a></li>
+            <li><a id="category3" class="category" onclick="highlightCategory(this)" href="{% url 'dron' %}"> Видео с дрона</a></li>
+            <li><a id="category4" class="category" onclick="highlightCategory(this)" href="{% url 'ar' %}"> AR разработка</a></li>
+            <li><a id="category5" class="category" onclick="highlightCategory(this)" href="{% url 'foto' %}"> Фото-видео съемка</a></li>
+            <li><a id="category6" class="category" onclick="highlightCategory(this)" href="{% url 'vr' %}"> VR разработка</a></li>
+            <li><a id="category7" class="category" onclick="highlightCategory(this)" href="{% url 'ux' %}"> UI/UX дизайн</a></li>
+            <li><a id="category8" class="category" onclick="highlightCategory(this)" href="#"> Разработка бренда</a></li>
+        </ul>
+    </div>
+     
+    <section class="slickslider">
+      <div class="slickslider-items">
+        <div><img src="/static/vendor/img/123.png" alt="Image 3"></div>
+        <div><img src="/static/vendor/img/2.png" alt="Image 1"></div>
+        <div><img src="/static/vendor/img/3.png" alt="Image 3"></div>
+        <div><img src="/static/vendor/img/3.png" alt="Image 3"></div>
+      </div>
+    </section>
+
+
+   
+
+
+
+
+    
+    
+   
+    <script>
+    function highlightCategory(category) {
+    // Удаляем подсветку у всех категорий
+    const categories = document.querySelectorAll('.category');
+    categories.forEach(cat => cat.classList.remove('active'));
+
+    // Подсвечиваем выбранную категорию
+    category.classList.add('active');
+}
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Получаем текущий URL-адрес страницы
+            var currentUrl = window.location.href;
+
+            // Получаем все ссылки категорий
+            var categoryLinks = document.querySelectorAll('.btnss a');
+
+            // Перебираем ссылки категорий
+            categoryLinks.forEach(function(link) {
+                // Проверяем, содержит ли ссылка текущий URL-адрес страницы
+                if (link.href === currentUrl) {
+                    // Добавляем класс .active к родительскому элементу ссылки
+                    link.parentElement.classList.add('active');
+                }
+            });
+        });
+    </script>
+    
+ {% endblock %}
