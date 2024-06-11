@@ -16,7 +16,7 @@ SECRET_KEY = 'django-insecure-6kxsjrtwa(h!gu#0ohi+asdawdawdawdasdawd2amfsb90ce$l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["https://graceprojects.uz/Home"]
+ALLOWED_HOSTS = ["https://graceprojects.uz",]
 
 
 # Application definition
@@ -115,3 +115,6 @@ STATICFILES_DIRS = [ BASE_DIR / 'static' ]
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+if DEBUG is False:
+    MEDIA_ROOT = "/var/www/graceprojects.uz/media"
+    STATIC_ROOT = "/var/www/graceprojects.uz/static"
